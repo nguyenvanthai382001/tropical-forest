@@ -26,6 +26,7 @@ var searchtoggle_open = document.querySelector(".open-search");
 var searchtoggle_close = document.querySelector(".close-search");
 searchtoggle_open.onclick = function () {
   $(".search-form").addClass("open-search-a");
+  navMenu.classList.remove("active");
 };
 searchtoggle_close.onclick = function () {
   $(".search-form").removeClass("open-search-a");
