@@ -294,8 +294,12 @@ a:hover {
 }
 .header .menu-item {
   margin: 0 10px;
-  line-height: 70px;
+  padding: 25px 0;
   position: relative;
+}
+.header .menu-item:hover ion-icon {
+  transform: rotate(90deg);
+  color: #255605;
 }
 .header .menu-item:hover .sub-menu {
   display: block;
@@ -309,6 +313,10 @@ a:hover {
   font-weight: 700;
   line-height: 20px;
   text-transform: uppercase;
+  padding-bottom: 5px;
+}
+.header .menu-link:hover {
+  color: #255605;
 }
 .header .sub-menu {
   padding: 0;
@@ -327,6 +335,35 @@ a:hover {
   border-bottom: 1px solid #eee;
   margin: 0;
   padding: 8px 10px;
+}
+.header .sub-menu li::before {
+  content: "";
+  height: 4px;
+  width: 100%;
+  background: #255605;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  z-index: 100;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+.header .sub-menu li:hover:before {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+.header .sub-menu::before {
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  position: absolute;
+  top: -7px;
+  left: 30px;
+  z-index: 100;
+  transform: rotate(45deg);
+  box-shadow: -5px -5px 8px -3px #ccc;
 }
 .header .header-left {
   margin-left: 90px;
@@ -428,21 +465,22 @@ a:hover {
 .service {
   margin-bottom: 80px;
 }
-.service img {
-  margin-right: 20px;
+.service .service-icon {
+  margin-right: 10px;
+  font-size: 40px;
 }
 .service .item {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
 }
 .service .name {
   color: #515151;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 .service .desc {
-  font-size: 11px;
   color: #827e7e;
+  font-size: 13px;
 }
 
 .product-sale {
@@ -481,15 +519,20 @@ a:hover {
 .tab-product .nav-link {
   font-weight: 500;
   border: none;
-  padding: 20px;
+  padding: 10px 20px;
+  margin: 0 5px;
 }
 .tab-product .nav-link.active {
   border: none;
-  color: #255605;
+  color: #fff;
+  background-color: #255605;
+  border-radius: 50px;
 }
 .tab-product .nav-link:hover {
   border: none;
-  color: #255605;
+  color: #fff;
+  background-color: #255605;
+  border-radius: 50px;
 }
 
 .tab-product {
@@ -534,20 +577,23 @@ a:hover {
 
 .video {
   margin: 70px 0;
+}
+.video .video-img {
   position: relative;
 }
 .video img {
+  width: 100vw;
   max-height: 600px;
-  width: 100%;
   object-fit: cover;
 }
-.video .icon {
+.video ion-icon {
   position: absolute;
+  font-size: 150px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
   color: #fff;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
 }
 
 .category-sale {
@@ -738,7 +784,7 @@ a:hover {
   border-radius: 20px 20px 0px 0px;
   text-transform: uppercase;
   font-weight: 500;
-  text-align: center;
+  padding-left: 1.25rem;
 }
 
 .card-header {
@@ -756,9 +802,8 @@ a:hover {
   list-style: none;
 }
 .ul-catalog li {
-  padding: 12px 0;
-  padding-left: 50px;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 1.25rem;
 }
 
 .product-title {
@@ -1210,6 +1255,7 @@ a:hover {
   }
   .service .item {
     justify-content: flex-start;
+    margin-left: 60px;
   }
 
   .banner {

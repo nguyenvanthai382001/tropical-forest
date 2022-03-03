@@ -20,6 +20,10 @@
       type="text/css"
       href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css"
+    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Tropical-forest</title>
   </head>
@@ -205,13 +209,12 @@
       </section>
       <section class="service">
         <div class="container">
-          <div class="row d-flex justify-content-center ml-5">
+          <div class="row gutters-5 d-flex justify-content-center">
             <div class="col-lg-3 col-md-5 mb-4 col-12">
               <div class="item">
-                <img
-                  src="./assets/img-icon/service-icon-img (1).png"
-                  alt="img-1"
-                />
+                <div class="service-icon">
+                  <ion-icon name="airplane-outline"></ion-icon>
+                </div>
                 <div class="content">
                   <div class="name">Giao hàng miễn phí</div>
                   <div class="desc">Miễn phí giao hàng với mọi đơn hàng</div>
@@ -220,10 +223,9 @@
             </div>
             <div class="col-lg-3 col-md-5 mb-4 col-12">
               <div class="item">
-                <img
-                  src="./assets/img-icon/service-icon-img (2).png"
-                  alt="img-1"
-                />
+                <div class="service-icon">
+                  <ion-icon name="reload-outline"></ion-icon>
+                </div>
                 <div class="content">
                   <div class="name">Chính sách đổi trả</div>
                   <div class="desc">Đảm bảo hoàn tiền sau 7 ngày</div>
@@ -232,10 +234,9 @@
             </div>
             <div class="col-lg-3 col-md-5 mb-4 col-12">
               <div class="item">
-                <img
-                  src="./assets/img-icon/service-icon-img (3).png"
-                  alt="img-1"
-                />
+                <div class="service-icon">
+                  <ion-icon name="person-outline"></ion-icon>
+                </div>
                 <div class="content">
                   <div class="name">Ưu đãi cho thành viên</div>
                   <div class="desc">Với đơn hàng trên 500.000đ</div>
@@ -244,10 +245,9 @@
             </div>
             <div class="col-lg-3 col-md-5 mb-4 col-12">
               <div class="item">
-                <img
-                  src="./assets/img-icon/service-icon-img (4).png"
-                  alt="img-1"
-                />
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
                 <div class="content">
                   <div class="name">Tư vẫn trực tuyến</div>
                   <div class="desc">Hỗ trợ khách hàng 24/7</div>
@@ -454,10 +454,15 @@
         </div>
       </section>
       <section class="video">
-        <img src="./assets/img/video-img.jpg" alt="" />
-        <a href="#" class="icon">
-          <img src="./assets/img-icon/play-icon-img.png" alt="icon-play" />
-        </a>
+        <div class="video-img">
+          <img src="./assets/img/video-img.jpg" alt="" />
+          <a
+            data-fancybox="video-gallery"
+            href="https://www.youtube.com/watch?v=StQFa61QBZk"
+          >
+            <ion-icon name="play-circle-outline"></ion-icon>
+          </a>
+        </div>
       </section>
       <section class="category-sale">
         <div class="container">
@@ -797,6 +802,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
     <script src="./assets/js/slick.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>

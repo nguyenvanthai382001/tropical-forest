@@ -341,16 +341,22 @@ a {
   }
   .menu-item {
     margin: 0 10px;
-    line-height: 70px;
+    padding: 25px 0;
     position: relative;
     &:hover {
+      ion-icon {
+        transform: rotate(90deg);
+        color: $green;
+      }
       .sub-menu {
         display: block;
+        
       }
     }
     ion-icon {
       font-size: 13px;
     }
+
   }
   .menu-link {
     @include font_small;
@@ -358,6 +364,10 @@ a {
     font-weight: 700;
     line-height: 20px;
     text-transform: uppercase;
+    padding-bottom: 5px;
+    &:hover {
+      color: $green;
+    }
 
   }
   .sub-menu {
@@ -376,7 +386,36 @@ a {
       border-bottom: 1px solid #eee;
       margin: 0;
       padding: 8px 10px;
+      &::before {
+        content: "";
+        height: 4px;
+        width: 100%;
+        background: $green;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        z-index: 100;
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+      }
+      &:hover:before {
+        transform-origin: bottom left;
+        transform: scaleX(1);
+      }
     }
+  &::before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: $white;
+    position: absolute;
+    top: -7px;
+    left: 30px;
+    z-index: 100;
+    transform: rotate(45deg);
+    box-shadow: -5px -5px 8px -3px #ccc
+  }
   }
   .header-left {
     margin-left: 90px;
@@ -480,21 +519,22 @@ a {
 
 .service {
   margin-bottom: 80px;
-  img {
-    margin-right: 20px;
+  .service-icon {
+    margin-right: 10px;
+    font-size: 40px;
   }
   .item {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
   }
   .name {
     color: $gray-dark;
-    @include font_small();
+    @include font_littleBig;
   }
   .desc {
-    font-size: 11px;
     color: $gray-light;
+    font-size: 13px;
   }
 }
 
@@ -529,21 +569,29 @@ a {
 }
 
 .tab-product {
+  // .nav-item {
+  //   background-color: $green;
+  // }
   .nav-tabs {
     border: none;
   }
   .nav-link {
     font-weight: 500;
     border: none;
-    padding: 20px;
+    padding: 10px 20px;
+    margin:0 5px;
   }
   .nav-link.active {
     border: none;
-    color: $green;
+    color: $white;
+    background-color: $green;
+    border-radius: 50px;
   }
   .nav-link:hover {
     border: none;
-    color: $green;
+    color: $white;
+    background-color: $green;
+    border-radius: 50px;
   }
 }
 .tab-product {
@@ -585,19 +633,22 @@ a {
 
 .video {
   margin: 70px 0;
-  position: relative;
+  .video-img {
+    position: relative;
+  }
   img {
+    width: 100vw;
     max-height: 600px;
-    width: 100%;
     object-fit: cover;
   }
-  .icon {
+  ion-icon {
     position: absolute;
+    font-size: 150px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
     color: $white;
+    cursor: pointer;
+    transform: translate(-50%,-50%);
   }
 }
 
@@ -772,7 +823,7 @@ a {
     margin-top: 18px;
   }
 }
-// /////////////
+// ///////////// list-product /////////////////////
 
 .title-category {
   background-color: $green;
@@ -782,7 +833,8 @@ a {
   border-radius: 20px 20px 0px 0px;
   text-transform: uppercase;
   font-weight: 500;
-  text-align: center;
+  padding-left: 1.25rem;
+  // text-align: center;
 }
 .card-header {
   border-bottom: none;
@@ -796,9 +848,9 @@ a {
 .ul-catalog {
   list-style: none;
   li {
-    padding: 12px 0;
-    padding-left: 50px;
     border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 0.75rem 1.25rem;
+
   }
 }
 
@@ -1257,6 +1309,7 @@ button {
     }
     .item {
       justify-content: flex-start;
+      margin-left: 60px;
     }
   }
   .banner {
